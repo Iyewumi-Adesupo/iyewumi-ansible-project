@@ -1,0 +1,16 @@
+variable "stage-lt" {}
+variable "image_id" {}
+variable "instance_type" {}
+variable "vpc_security_group_ids" {}
+variable "key_name" {}
+variable "nexus-server-ip" {}
+variable "api_key" {}
+variable "account_id" {}
+variable "stage-asg-name" {}
+variable "vpc-zone-identifier" {}
+variable "tg_arn_stage" {}
+variable "tg_arn_prod" {}
+variable "stage-asg-policy" {}
+variable "prod-lt" {}
+variable "prod-asg-name" {}
+variable "prod-asg-policy" {}
