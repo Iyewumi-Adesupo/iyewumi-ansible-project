@@ -1,4 +1,4 @@
-<h1 align="center" id="title">Pet Adoption Ansible Auto Discovery</h1>
+<h1 align="center" id="title">Enterprise Java Application</h1>
 <p id="description">Ensuring a secure environment is crucial during application development. Servers, databases, and other components must be shielded from unauthorized access. In this project, we implement a Bastion Host, also referred to as a "jump box," to enable secure SSH access to our application servers. This configuration places our servers within a private subnet with strictly controlled access.
 
 Additionally, the project introduces the principle of least privilege, meaning user access rights are limited to the essentials required for their tasks.
