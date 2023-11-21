@@ -40,9 +40,7 @@ By following these instructions, you will be well-prepared to initiate a sophist
 
 <img width="960" alt="pluggins installed successfully" src="https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/46de9317-5d31-4825-b9c9-4810ab5a8177">
 
-<p id="description"> Then credentials are being added, system configuration was executed using Sonarqube and its environment variables, and I use tools like Java and Maven to build the pipeline. See below  </p>
-
-<img width="960" alt="jdk and maven installations extracted " src="https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/1c70ecf5-5f98-417f-a853-47869f04360e">
+<p id="description"> Then credentials are being added, system configuration was executed using Sonarqube and its environment variables, and I use tools like Java and Maven to build the pipeline. 
 
 <img width="960" alt="java installation" src="https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/46274422-ec35-4742-a54b-d4b80fa8d410">
 
