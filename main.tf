@@ -1,11 +1,11 @@
 locals {
-  name = "adesupo"
+  name = ""
 }
 
 module "vpc" {
   source                 = "./module/vpc"
-  keypair                = "adesupokey1"
-  public_keypair_path    = "~/keypair/ET2PACAAD.pub"
+  keypair                = ""
+  public_keypair_path    = ""
   AZ1                    = "us-west-2a"
   AZ2                    = "us-west-2b"
   tag-vpc                = "${local.name}-vpc"
@@ -28,18 +28,18 @@ module "vpc" {
 
 module "bastion-host" {
   source               = "./module/bastion-host"
-  ami                  = "ami-00aa0673b34e3c150"
+  ami                  = ""
   security_groups      = module.vpc.baston-sg
   instance_type        = "t2.micro"
   subnet_id            = module.vpc.public-subnet1
   key_name             = module.vpc.key-name
   tag-bastion-host     = "${local.name}-bastion-host"
-  private_keypair_path = file("~/keypair/ET2PACAAD")
+  private_keypair_path = file("")
 }
 
 module "jenkins" {
   source          = "./module/jenkins"
-  ami             = "ami-00aa0673b34e3c150"
+  ami             = ""
   instance_type   = "t2.medium"
   subnet_id       = module.vpc.private-subnet1
   key_name        = module.vpc.key-name
@@ -52,7 +52,7 @@ module "jenkins" {
 
 module "ansible" {
   source             = "./module/ansible"
-  ami                = "ami-00aa0673b34e3c150"
+  ami                = ""
   instance_type      = "t2.micro"
   security_group_ids = module.vpc.ansible-sg
   subnet_id          = module.vpc.public-subnet1
@@ -62,7 +62,7 @@ module "ansible" {
   prod-playbook      = "${path.root}/module/ansible/prod-playbook.yml"
   stage-bashscript  = "${path.root}/module/ansible/stage-bashscript.sh"
   prod-bashscript   = "${path.root}/module/ansible/prod-bashscript.sh"
-  private-key        = file("~/keypair/ET2PACAAD")
+  private-key        = file("")
   nexus-server-ip    = module.nexus.nexus-server-ip
 }
 
@@ -70,13 +70,13 @@ module "asg" {
   source                 = "./module/asg"
   stage-lt               = "${local.name}-stage-lt"
   prod-lt                = "${local.name}-prod-lt"
-  image_id               = "ami-00aa0673b34e3c150"
+  image_id               = ""
   instance_type          = "t2.medium"
   vpc_security_group_ids = module.vpc.docker-sg
   key_name               = module.vpc.key-name
   nexus-server-ip        = module.nexus.nexus-server-ip
-  api_key                = "NRAK-81D5A0VU3I67CXWHC7ENSQE45IK"
-  account_id             = "4091023"
+  api_key                = ""
+  account_id             = ""
   stage-asg-name         = "${local.name}-stage-asg"
   prod-asg-name          = "${local.name}-prod-asg"
   vpc-zone-identifier    = [module.vpc.private-subnet1, module.vpc.private-subnet2]
@@ -98,7 +98,7 @@ module "alb" {
 
 module "nexus" {
   source          = "./module/nexus"
-  ami             = "ami-00aa0673b34e3c150"
+  ami             = ""
   instance_type   = "t2.medium"
   subnet_id       = module.vpc.public-subnet2
   key_name        = module.vpc.key-name
@@ -108,7 +108,7 @@ module "nexus" {
 
 module "sonarqube" {
   source               = "./module/sonarqube"
-  ubuntu_ami           = "ami-03f65b8614a860c29"
+  ubuntu_ami           = ""
   instance_type        = "t2.medium"
   security_group_ids   = module.vpc.sonarqube-sg
   subnet_id            = module.vpc.public-subnet1
@@ -118,10 +118,10 @@ module "sonarqube" {
 
 module "route53" {
   source            = "./module/route53"
-  domain-name       = "crystalpalace.online"
-  domain-name1      = "stage.crystalpalace.online"
-  domain-name2      = "prod.crystalpalace.online"
-  domain-name3      = "*.crystalpalace.online"
+  domain-name       = "domain-name.com"
+  domain-name1      = "stage.domain-name.come"
+  domain-name2      = "prod.domain-name.com"
+  domain-name3      = "*.domain-name.com"
   stage_lb_dns_name = module.alb.stage-alb-dns
   stage_lb_zoneid   = module.alb.stage-alb-zone-id
   prod_lb_dns_name  = module.alb.prod-lb-dns
@@ -130,9 +130,9 @@ module "route53" {
 
 module "rds" {
   source                   = "./module/rds"
-  db_identifier            = "adesupo-db"
+  db_identifier            = "localname-db"
   security_groups          = module.vpc.rds-sg
-  db-name                  = "adesupo_db"
+  db-name                  = "localname_db"
   db-username              = data.vault_generic_secret.db_secret.data["username"]
   db-password              = data.vault_generic_secret.db_secret.data["password"]
   subnet_ids               = [module.vpc.private-subnet1, module.vpc.private-subnet2]
