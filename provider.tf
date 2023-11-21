@@ -1,11 +1,11 @@
 provider "aws" {
   region  = "us-west-2"
-  profile = "sue-ade"
+  profile = "aws-cli-credentials-name"
 }
 
 provider "vault" {
-  token   = "s.YJ1X6olszHvB2mPmUzXKpP61"
-  address = "https://crystalpalace.online"
+  token   = "vault-generated-token"
+  address = "https://domain-name.com"
 }
 
 data "vault_generic_secret" "db_secret" {
