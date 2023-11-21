@@ -2,27 +2,27 @@ variable "aws_region" {
   default = "us-west-2"
 }
 variable "profile" {
-  default = "sue-ade"
+  default = "aws-credentials-name"
 }
 
 variable "public_keypair_path" {
-  default = "~/keypair/ET2PACAAD.pub"
+  default = "pub-keypair"
 }
 variable "ubuntu_ami" {
-  default = "ami-03f65b8614a860c29"
+  default = ""
 }
 variable "instance_type" {
   default = "t3.medium"
 }
 variable "domain_name" {
-  default = "crystalpalace.online"
+  default = ""
 }
 variable "email" {
-  default = "adesuposusan89@yahoo.com"
+  default = ""
 }
 variable "api_key" {
-  default = "NRAK-81D5A0VU3I67CXWHC7ENSQE45IK"
+  default = ""
 }
 variable "account_id" {
-  default = "4091023"
+  default = ""
 }
