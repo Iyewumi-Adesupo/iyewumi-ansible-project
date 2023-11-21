@@ -16,16 +16,6 @@ By following these instructions, you will be well-prepared to initiate a sophist
 
 <p id="description">To deploy this application, I will run terraform apply inside the vault directory, then ssh into the vault using ubuntu, then I will initialize and enable the vault. Below pictures depict the process. </p>
 
-![image](https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/e398a774-c8bd-45c1-ada9-18453c186084)
-
-![image](https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/6a83ceda-71cb-4f92-9af8-51207934d6df)
-
-![image](https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/46b79605-9a9d-416c-be61-0f1b2d13aa37)
-
-![image](https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/474bb414-6ec1-4ccb-a64b-4aebba2ac03f)
-
-![image](https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/aa5ba163-b1b6-4b67-a8f8-8d01af8df983)
-
 <p id="description"> Then all resources will be provisioned using terraform apply. This is when the vault has been opened. The below pictures show the resources been provisioned, whereby the outputs are generated </p>
 
 ![image](https://github.com/Iyewumi-Adesupo/iyewumi-ansible-project/assets/135404420/673575ca-e41d-4767-bfb2-a52b07146114)
